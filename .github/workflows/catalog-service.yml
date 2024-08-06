@@ -26,8 +26,11 @@ jobs:
           java-version: '21'
           distribution: 'adopt'
           cache: 'maven'
-      - name: Build with Maven
-        run: ./mvnw -ntp verify
 
       - name: Make Maven wrapper executable
         run: chmod +x mvnw
+
+      - name: Build with Maven
+        run: ./mvnw -ntp verify
+
+
