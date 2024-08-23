@@ -7,12 +7,12 @@ import org.springframework.stereotype.Service;
 public class RabbitMQListener {
 
     @RabbitListener(queues = "${order.new-order.queue}")
-    public void handleNewOrder(RabbitMQController.MyPayload payload){
+    public void handleNewOrder(RabbitMQController.MyPayload payload) {
         System.out.println("New Order: " + payload.content());
     }
 
     @RabbitListener(queues = "${order.delivered-order.queue}")
-    public void handleDeliveredOrder(RabbitMQController.MyPayload payload){
+    public void handleDeliveredOrder(RabbitMQController.MyPayload payload) {
         System.out.println("Delivered Order: " + payload.content());
     }
 }
