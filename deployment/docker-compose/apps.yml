@@ -1,5 +1,5 @@
 version: "3.8"
-name: 'spring-boot-microservices-course'
+name: 'bookstore-spring-boot-microservices'
 services:
   catalog-service:
     image: vijayanselvam/bookstore-catalog-service
@@ -14,6 +14,32 @@ services:
     restart: unless-stopped
     depends_on:
       catalog-db:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+
+  order-service:
+    image: vijayanselvam/bookstore-order-service
+    container_name: order-service
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - ORDER_CATALOG_SERVICE_URL=http://api-gateway:8989/catalog
+      - DB_URL=jdbc:postgresql://order-db:5432/postgres
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=postgres
+      - RABBITMQ_HOST=bookstore-rabbitmq
+      - RABBITMQ_PORT=5672
+      - RABBITMQ_USERNAME=guest
+      - RABBITMQ_PASSWORD=guest
+    ports:
+      - "8082:8082"
+    restart: unless-stopped
+    depends_on:
+      order-db:
+        condition: service_healthy
+      bookstore-rabbitmq:
         condition: service_healthy
     deploy:
       resources:
