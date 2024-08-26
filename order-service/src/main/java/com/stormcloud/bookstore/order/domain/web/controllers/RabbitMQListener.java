@@ -1,10 +1,10 @@
-//package com.stormcloud.bookstore.order.domain.web.controllers;
+// package com.stormcloud.bookstore.order.domain.web.controllers;
 //
-//import org.springframework.amqp.rabbit.annotation.RabbitListener;
-//import org.springframework.stereotype.Service;
+// import org.springframework.amqp.rabbit.annotation.RabbitListener;
+// import org.springframework.stereotype.Service;
 //
-//@Service
-//public class RabbitMQListener {
+// @Service
+// public class RabbitMQListener {
 //
 //    @RabbitListener(queues = "${order.new-order.queue}")
 //    public void handleNewOrder(RabbitMQController.MyPayload payload) {
@@ -15,4 +15,4 @@
 //    public void handleDeliveredOrder(RabbitMQController.MyPayload payload) {
 //        System.out.println("Delivered Order: " + payload.content());
 //    }
-//}
+// }

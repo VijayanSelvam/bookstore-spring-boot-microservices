@@ -1,13 +1,13 @@
-//package com.stormcloud.bookstore.order.domain.web.controllers;
+// package com.stormcloud.bookstore.order.domain.web.controllers;
 //
-//import com.stormcloud.bookstore.order.ApplicationProperties;
-//import org.springframework.amqp.rabbit.core.RabbitTemplate;
-//import org.springframework.web.bind.annotation.PostMapping;
-//import org.springframework.web.bind.annotation.RequestBody;
-//import org.springframework.web.bind.annotation.RestController;
+// import com.stormcloud.bookstore.order.ApplicationProperties;
+// import org.springframework.amqp.rabbit.core.RabbitTemplate;
+// import org.springframework.web.bind.annotation.PostMapping;
+// import org.springframework.web.bind.annotation.RequestBody;
+// import org.springframework.web.bind.annotation.RestController;
 //
-//@RestController
-//class RabbitMQController {
+// @RestController
+// class RabbitMQController {
 //    private final RabbitTemplate rabbitTemplate;
 //    private final ApplicationProperties properties;
 //
@@ -24,4 +24,4 @@
 //    record MyMessage(String routingKey, MyPayload payload) {}
 //
 //    record MyPayload(String content) {}
-//}
+// }
