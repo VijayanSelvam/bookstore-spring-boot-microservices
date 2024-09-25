@@ -5,7 +5,7 @@ public class OrderNotFoundException extends RuntimeException {
         super(message);
     }
 
-    public static OrderNotFoundException forCode(String orderId) {
-        return new OrderNotFoundException("Order with order id " + orderId + " not found");
+    public static OrderNotFoundException forOrderNumber(String orderNumber) {
+        return new OrderNotFoundException("Order with Number " + orderNumber + " not found");
     }
 }
