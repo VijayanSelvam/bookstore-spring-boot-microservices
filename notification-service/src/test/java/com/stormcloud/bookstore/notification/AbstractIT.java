@@ -8,7 +8,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Import;
 
 @SpringBootTest(webEnvironment = RANDOM_PORT)
-@Import(ContainersConfig.class)
+@Import(TestcontainersConfiguration.class)
 public abstract class AbstractIT {
     @MockBean
     protected NotificationService notificationService;
